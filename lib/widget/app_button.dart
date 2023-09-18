@@ -6,15 +6,17 @@ class AppButton extends StatelessWidget {
     super.key,
     required this.onPressed,
     required this.title,
+    this.padding,
   });
 
   final Function()? onPressed;
   final String title;
+  final EdgeInsetsGeometry? padding;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(vertical: 13),
+            padding: padding ?? const EdgeInsets.symmetric(vertical: 13),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             backgroundColor: AppColors.primaryColor),
